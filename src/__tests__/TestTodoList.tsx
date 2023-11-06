@@ -6,6 +6,7 @@ describe("testing TodoList Home page", () => {
   
   test("App component snapshot testing", () => {
       const container=render(<App />);
+      
       expect(container).toMatchInlineSnapshot(`
 Object {
   "asFragment": [Function],
