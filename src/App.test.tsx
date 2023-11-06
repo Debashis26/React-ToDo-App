@@ -17,7 +17,7 @@ Object {
         <h1>
           Get To Work! 
           <span>
-            An Animated Todo List Made With React Hooks.
+            An Animated Todo List Made With React Hooks...
           </span>
         </h1>
         <form
@@ -100,7 +100,7 @@ Object {
       <h1>
         Get To Work! 
         <span>
-          An Animated Todo List Made With React Hooks.
+          An Animated Todo List Made With React Hooks...
         </span>
       </h1>
       <form
