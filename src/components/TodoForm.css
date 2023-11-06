@@ -34,6 +34,6 @@
 }
 .NewTodoForm input,
 .NewTodoForm button {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   height: 3rem;
 }

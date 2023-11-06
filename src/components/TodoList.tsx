@@ -53,7 +53,7 @@ const TodoList: React.FC = () => {
   return (
     <div className='TodoList'>
       <h1>
-        Get To Work! <span>An Animated Todo List Made With React Hooks.</span>
+        Get To Work! <span>An Animated Todo List Made With React Hooks...</span>
       </h1>
       <TodoForm addTodo={add} />
       <ul>

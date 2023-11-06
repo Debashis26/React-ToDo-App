@@ -20,7 +20,7 @@
   opacity: 0.5;
 }
 .Todo.completed .Todo-task:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: -0.5rem;
@@ -86,6 +86,6 @@
 }
 .Todo-edit-form input,
 .Todo-edit-form button {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   height: 3rem;
 }
