@@ -27,31 +27,3 @@ exports[`Testing TodoItem Component Should renders correctly 1`] = `
   </div>
 </div>
 `;
-
-exports[`TodoItem renders correctly 1`] = `
-<div
-  class="Todo"
->
-  <li
-    class="Todo-task"
-  >
-    Example Task
-  </li>
-  <div
-    class="Todo-buttons"
-  >
-    <button>
-      <i
-        class="fas fa-pen"
-        data-testid="edit"
-      />
-    </button>
-    <button>
-      <i
-        class="fas fa-trash"
-        data-testid="delete"
-      />
-    </button>
-  </div>
-</div>
-`;
