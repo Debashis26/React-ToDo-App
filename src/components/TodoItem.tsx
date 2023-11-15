@@ -61,10 +61,10 @@ const TodoItem: React.FC<TodoItemProps> = ({
       <CSSTransition timeout={500}>
         <div className="Todo-buttons">
           <button onClick={() => setMode(!mode)}>
-            <i className="fas fa-pen" />
+            <i className="fas fa-pen" data-testid="edit" />
           </button>
           <button onClick={() => removeTodo(todo.id)}>
-            <i className="fas fa-trash" />
+            <i className="fas fa-trash" data-testid="delete" />
           </button>
         </div>
       </CSSTransition>
