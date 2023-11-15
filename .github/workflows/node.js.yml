@@ -28,7 +28,10 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test
+    - name: Run unit test
+      run: npm run test -- --testPathPattern="specs/*"
+    - name: Run UI test
+      run: npm run test -- --testPathPattern="e2e/*"
     - name: Deploy with master
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
