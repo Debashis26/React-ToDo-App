@@ -28,20 +28,20 @@ describe("Testing React ToDo App", () => {
     expect(inputValue).toBe('');
   });
 
-  // it('should add a new todo', async () => {
-  //   const todoInputSelector = 'input[name="task"]';
-  //   const addButtonSelector = `${todoInputSelector} button`;
-  //   await page.waitForSelector(todoInputSelector);
-  //   await page.waitForTimeout(1000);
-  //   await page.type(todoInputSelector, 'New Todo Item');
-  //   await page.waitForSelector(addButtonSelector);
-  //   await page.click(addButtonSelector);
+  it('should add a new todo', async () => {
+    const todoInputSelector = 'input[name="task"]';
+    const addButtonSelector = `${todoInputSelector} button`;
+    await page.waitForSelector(todoInputSelector);
+    await page.waitForTimeout(1000);
+    await page.type(todoInputSelector, 'New Todo Item');
+    await page.waitForSelector(addButtonSelector);
+    await page.click(addButtonSelector);
   
-  //   const lastTodoSelector = '.todo-list li:last-child';
-  //   await page.waitForSelector(lastTodoSelector);
+    const lastTodoSelector = '.todo-list li:last-child';
+    await page.waitForSelector(lastTodoSelector);
   
-  //   const lastTodoText = await page.$eval(lastTodoSelector, (todo) => todo.textContent);
-  //   expect(lastTodoText).toBe('New Todo Item');
-  // },250000);
+    const lastTodoText = await page.$eval(lastTodoSelector, (todo) => todo.textContent);
+    expect(lastTodoText).toBe('New Todo Item');
+  },250000);
   
 });
