@@ -29,9 +29,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - name: Run unit test
-      run: npm run test -- --testPathPattern="specs/*"
+      run: npm run test:specs
     - name: Run UI test
-      run: npm run test -- --testPathPattern="e2e/*"
+      run: npm run test:e2e
     - name: Deploy with testing
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
