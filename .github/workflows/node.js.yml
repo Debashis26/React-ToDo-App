@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "testing" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "testing" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -32,7 +32,7 @@ jobs:
       run: npm run test:specs
     - name: Run UI test
       run: npm run test:e2e
-    - name: Deploy with testing
+    - name: Deploy with master
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
