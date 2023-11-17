@@ -3,8 +3,8 @@ import * as Puppeteer from "puppeteer";
 describe("Testing React ToDo App", () => {
   let browser: Puppeteer.Browser;
   let page: Puppeteer.Page;
-  // const PAGE_URL = "https://debashis26.github.io/React-ToDo-App/";
-  const PAGE_URL = "http://localhost:3000/React-ToDo-App";
+  const PAGE_URL = "https://debashis26.github.io/React-ToDo-App/";
+  const PAGE_URL_LOCAL = "http://localhost:3000/React-ToDo-App";
   beforeAll(async () => {
     browser = await Puppeteer.launch({  headless:"new"});
     page = await browser.newPage();
