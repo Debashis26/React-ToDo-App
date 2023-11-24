@@ -6,3 +6,8 @@ Feature: React ToDo App
         When I enter a new ToDo item "Buy groceries"
         And I press the "Add ToDo" button
         Then the ToDo list should contain "Buy groceries"
+
+    Scenario: Adding a new ToDo with empty task
+        Given I enter an empty ToDo item
+        When I press the "Add ToDo" button
+        Then the ToDo list should not contain an empty task
