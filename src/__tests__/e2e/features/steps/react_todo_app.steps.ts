@@ -10,11 +10,7 @@ let page: Page;
 const TODO_URL = "https://debashis26.github.io/React-ToDo-App/";
 defineFeature(feature, (test) => {
   beforeAll(async () => {
-    browser = await launch({
-      headless: false,
-      args: ["--start-maximized"],
-      slowMo: 70,
-    });
+    browser = await launch({ headless: "new" });
     page = await browser.newPage();
   });
   afterAll(async () => {
@@ -49,10 +45,9 @@ defineFeature(feature, (test) => {
     });
 
     then('the ToDo list should contain "Buy groceries"', async () => {
-      const lastLiSelector = '.todo-list .Todo:last-child li';
+      const lastLiSelector = ".todo-list .Todo:last-child li";
       const lastItem = await page.$eval(lastLiSelector, (li) => li.textContent);
       expect(lastItem).toBe("Buy groceries");
     });
-    
   }, 25000);
 });
