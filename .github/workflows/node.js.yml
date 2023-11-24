@@ -30,7 +30,7 @@ jobs:
       - name: Run unit test
         run: npm run test:specs
       - name: Run UI test
-        run: npm run test:e2e
+        run: npm run jest
       - name: Deploy with master
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
