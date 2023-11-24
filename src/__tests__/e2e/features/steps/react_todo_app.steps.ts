@@ -54,5 +54,5 @@ defineFeature(feature, (test) => {
       expect(lastItem).toBe("Buy groceries");
     });
     
-  }, 50000);
+  }, 25000);
 });
