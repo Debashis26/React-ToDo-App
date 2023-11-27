@@ -10,11 +10,11 @@ let page: Page;
 const TODO_URL = "https://debashis26.github.io/React-ToDo-App/";
 defineFeature(feature, (test) => {
   beforeAll(async () => {
-    browser = await launch({ headless: "new" });
+    browser = await launch();
     page = await browser.newPage();
     await page.setViewport({ width: 1360, height: 1080 });
     await page.goto(TODO_URL);
-  });
+  }, 15000);
   afterAll(async () => {
     await browser.close();
   });
@@ -26,16 +26,17 @@ defineFeature(feature, (test) => {
       expect(EXPECTED_PAGETITLE).toBe(PAGE_TITELE);
     });
 
-    when('I enter a new ToDo item "Buy groceries"', async () => {
+    when(/^I enter a new ToDo item "(.*)"$/, async (todoInputValue: string) => {
+      
       const todoInputSelector = 'input[name="task"]';
       await page.waitForSelector(todoInputSelector);
       await page.waitForTimeout(1000);
-      await page.type(todoInputSelector, "Buy groceries");
+      await page.type(todoInputSelector, todoInputValue);
       const searchInputValue = await page.$eval(
-        todoInputSelector,
+        todoInputSelector,   
         (input) => input.value
       );
-      expect(searchInputValue).toBe("Buy groceries");
+      expect(searchInputValue).toBe(todoInputValue);
     });
     when('I press the "Add ToDo" button', async () => {
       const buttonSelector = "form.NewTodoForm button";
@@ -44,10 +45,10 @@ defineFeature(feature, (test) => {
       await page.click(buttonSelector);
     });
 
-    then('the ToDo list should contain "Buy groceries"', async () => {
+    then(/the ToDo list should contain "(.*)"$/, async (todoInputValue: string) => {
       const lastLiSelector = ".todo-list .Todo:last-child li";
       const lastItem = await page.$eval(lastLiSelector, (li) => li.textContent);
-      expect(lastItem).toBe("Buy groceries");
+      expect(lastItem).toBe(todoInputValue);
     });
   }, 25000);
 
@@ -78,4 +79,6 @@ defineFeature(feature, (test) => {
       expect(lastItem).not.toBe("");
     });
   }, 25000);
+
+ 
 });
