@@ -10,11 +10,7 @@ let page: Page;
 const TODO_URL = "https://debashis26.github.io/React-ToDo-App/";
 defineFeature(feature, (test) => {
   beforeAll(async () => {
-    browser = await launch({
-      headless: false,
-      slowMo: 50,
-      args: ["--start-maximized"],
-    });
+    browser = await launch();
     page = await browser.newPage();
     await page.setViewport({ width: 1360, height: 1080 });
     await page.goto(TODO_URL);
