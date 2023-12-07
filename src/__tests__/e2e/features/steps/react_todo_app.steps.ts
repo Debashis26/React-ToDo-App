@@ -95,16 +95,15 @@ defineFeature(feature, (test) => {
       const lastItem = await page.$eval(lastLiSelector, (li) => li.textContent);
       expect(lastItem).toBe(todoInputValue);
       // console.log("debugger..: given");
-
     });
     when('I click the "Delete" icon', async () => {
-      const deleteButtonSelector = '.todo-list .Todo:last-child button:nth-child(2)';
+      const deleteButtonSelector =
+        ".todo-list .Todo:last-child button:nth-child(2)";
       const deleteButton = await page.$(deleteButtonSelector);
       await page.waitForTimeout(1000);
       expect(deleteButton).toBeTruthy();
       await page.click(deleteButtonSelector);
       // console.log("debugger..: when");
-
     });
     then(
       /the ToDo list should not contain "(.*)"$/,
@@ -116,12 +115,9 @@ defineFeature(feature, (test) => {
           (li) => li.textContent
         );
         // console.log("debugger..: then "+lastItem);
-        
+
         expect(lastItem).not.toBe(todoInputValue);
       }
     );
-  },25000);
-
-
-  
+  }, 25000);
 });
